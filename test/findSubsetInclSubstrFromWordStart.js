@@ -21,6 +21,15 @@ const
         'further',  // 15
         'zip',      // 16
         'zipper'    // 17
+    ],
+
+    b = [
+        'abort',    // 0
+    ],
+
+    c = [
+        'abort',    // 0
+        'abroad',   // 1
     ];
 
 describe('findSubsetInclSubstrFromWordStart should find', ()=>{
@@ -74,6 +83,27 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
                 {start: 17, length: 1}
             );
         });
+
+        it('in one-element array', ()=>{
+            _.deepStrictEqual(
+                m('abo', b),
+                {start: 0, length: 1}
+            );
+        });
+
+        it('in two-elements array at start', ()=>{
+            _.deepStrictEqual(
+                m('abo', c),
+                {start: 0, length: 1}
+            );
+        });
+
+        it('in two-elements array at end', ()=>{
+            _.deepStrictEqual(
+                m('abr', c),
+                {start: 1, length: 1}
+            );
+        });
     });
 
     describe('index where to paste the string, if the subset does not exists', ()=>{
@@ -81,7 +111,7 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
         it('in the end of the array', ()=>{
             _.deepStrictEqual(
                 m('zulu', a),
-                {start: 17, length: 0}
+                {start: 18, length: 0}
             );
         });
 
@@ -96,6 +126,34 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
             _.deepStrictEqual(
                 m('abbat', a),
                 {start: 0, length: 0}
+            );
+        });
+
+        it('in one-element array (before)', ()=>{
+            _.deepStrictEqual(
+                m('aa', b),
+                {start: 0, length: 0}
+            );
+        });
+
+        it('in one-element array (after)', ()=>{
+            _.deepStrictEqual(
+                m('zulu', b),
+                {start: 1, length: 0}
+            );
+        });
+
+        it('in two-elements array at start', ()=>{
+            _.deepStrictEqual(
+                m('aa', c),
+                {start: 0, length: 0}
+            );
+        });
+
+        it('in two-elements array at end', ()=>{
+            _.deepStrictEqual(
+                m('zulu', c),
+                {start: 2, length: 0}
             );
         });
     });

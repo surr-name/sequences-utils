@@ -1,6 +1,6 @@
 const
     _ = require('assert'),
-    m = require('../bin/findSubsetInclSubstrFromWordStart'),
+    m = require('../bin/findSubsetIncludingSubstringFromWordStart'),
 
     a = [
         'abort',    // 0
@@ -23,11 +23,11 @@ const
         'zipper'    // 17
     ],
 
-    b = [
+    oneElementArray = [
         'abort',    // 0
     ],
 
-    c = [
+    twoElementsArray = [
         'abort',    // 0
         'abroad',   // 1
     ];
@@ -86,21 +86,21 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
 
         it('in one-element array', ()=>{
             _.deepStrictEqual(
-                m('abo', b),
+                m('abo', oneElementArray),
                 {start: 0, length: 1}
             );
         });
 
         it('in two-elements array at start', ()=>{
             _.deepStrictEqual(
-                m('abo', c),
+                m('abo', twoElementsArray),
                 {start: 0, length: 1}
             );
         });
 
         it('in two-elements array at end', ()=>{
             _.deepStrictEqual(
-                m('abr', c),
+                m('abr', twoElementsArray),
                 {start: 1, length: 1}
             );
         });
@@ -131,28 +131,28 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
 
         it('in one-element array (before)', ()=>{
             _.deepStrictEqual(
-                m('aa', b),
+                m('aa', oneElementArray),
                 {start: 0, length: 0}
             );
         });
 
         it('in one-element array (after)', ()=>{
             _.deepStrictEqual(
-                m('zulu', b),
+                m('zulu', oneElementArray),
                 {start: 1, length: 0}
             );
         });
 
         it('in two-elements array at start', ()=>{
             _.deepStrictEqual(
-                m('aa', c),
+                m('aa', twoElementsArray),
                 {start: 0, length: 0}
             );
         });
 
         it('in two-elements array at end', ()=>{
             _.deepStrictEqual(
-                m('zulu', c),
+                m('zulu', twoElementsArray),
                 {start: 2, length: 0}
             );
         });

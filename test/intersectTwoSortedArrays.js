@@ -69,14 +69,13 @@ describe('intersectTwoSortedArrays should return', ()=>{
             );
         });
 
-
-        it('; the returned elements must be unique', () =>{
+        it('and are strings', () =>{
             _.deepStrictEqual(
                 m(
-                    [0, 1, 2, 2,    5],
-                    [0,    2, 2, 4]
+                    ['apple', 'lime', 'orange', 'peach'],
+                    [         'lime', 'mango',  'peach']
                 ),
-                [0, 2]
+                ['lime', 'peach']
             );
         });
     });

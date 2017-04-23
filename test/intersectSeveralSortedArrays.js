@@ -29,7 +29,7 @@ describe('intersectSeveralSortedArrays should return', ()=>{
 
     describe('array of common elements if they exists', () =>{
 
-        it('in a middle', () =>{
+        it('in a middle, if there are 3 arrays', () =>{
             _.deepStrictEqual(
                 m(
                     [0,    2,    4, 5],
@@ -37,6 +37,18 @@ describe('intersectSeveralSortedArrays should return', ()=>{
                     [      2,    4,   6]
                 ),
                 [2, 4]
+            );
+        });
+
+        it('in a middle, if there are 3 arrays', () =>{
+            _.deepStrictEqual(
+                m(
+                    [0,    2,    4, 5],
+                    [   1, 2, 3, 4,      7],
+                    [      2,    4,   6],
+                    [            4,   6]
+                ),
+                [4]
             );
         });
 

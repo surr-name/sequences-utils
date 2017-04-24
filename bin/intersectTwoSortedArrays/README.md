@@ -1,6 +1,6 @@
 intersects two sorted arrays
 
-time complexity is `O(n)`, where `n` in worst case is length of the longest array.
+time complexity is `O(n)`, where `n` is sum of lengthes of both arrays in worst case.
 
 ## Usage
 

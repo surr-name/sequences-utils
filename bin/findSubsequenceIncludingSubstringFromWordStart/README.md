@@ -1,13 +1,13 @@
-at sorted array of unique strings, searches subset of elements which starts from the given substring or where the given substring can be inserted to.
+at sorted array of unique strings, searches subsequence of elements which starts from the given substring or where the given substring can be inserted to.
 
  * time complexity is `O(log n)`, where `n` is length of the given sorted array;
  * memory complexity is `O(1)`;
 
-it uses [Binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm) to find each border of the subset.
+it uses [Binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm) to find each border of the subsequence.
 
 ## Usage
 
-**findSubset(`substring`, `sortedArray`)**
+**findSubsequence(`substring`, `sortedArray`)**
 
  * **arguments**:
     * **`substring`** *string*
@@ -21,7 +21,7 @@ it uses [Binary search algorithm](https://en.wikipedia.org/wiki/Binary_search_al
 
 ```js
 const
-    findSubset = require('../bin/findSubsetIncludingSubstringFromWordStart'),
+    findSubsequence = require('../bin/findSubsequenceIncludingSubstringFromWordStart'),
 
     a = [
         'abort',    // 0
@@ -44,7 +44,7 @@ const
         'zipper'    // 17
     ];
 
-    findSubset('co', a);  // {start: 6, length: 5}
-    findSubset('cab', a); // {start: 5, length: 0}
+    findSubsequence('co', a);  // {start: 6, length: 5}
+    findSubsequence('cab', a); // {start: 5, length: 0}
 ```
 

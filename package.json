@@ -1,5 +1,5 @@
 {
-    "name"        : "sets-utils",
+    "name"        : "sequences-utils",
     "version"     : "0.0.1",
     "description" : "some operations on sets",
     "license"     : "MIT",

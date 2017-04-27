@@ -1,4 +1,4 @@
-## utils for some operations on siquences
+## utils for some operations on sequences
 
  * [intersect two sorted arrays](https://github.com/surr-name/sequences-utils/tree/master/bin/intersectTwoSortedArrays)
     * time complexity is `O(n)`, where `n` is sum of lengthes of both arrays in worst case.

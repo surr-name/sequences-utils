@@ -11,9 +11,20 @@ module.exports = merge;
  * @returns {Array} merged sorted array
  */
 function merge (...arrays) {
-    let r = arrays[0];
+    while ( arrays.length > 1 ) arrays = mergeEachTwo(arrays);
+    return arrays[0];
+}
 
-    for (let i = 1, l = arrays.length; i < l; i++) r = mergeTwo(r, arrays[i]);
+function mergeEachTwo (arrays) {
+    const
+        r = [],
+        length = arrays.length - 1;
+
+    for ( let i = 0; i < length; i += 2 ) {
+        r.push(mergeTwo(arrays[i], arrays[i+1]));
+    }
+
+    if ( (1 + length) % 2 ) r.push(arrays[length]);
 
     return r;
 }

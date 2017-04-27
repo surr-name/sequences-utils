@@ -1,6 +1,6 @@
 const
     _ = require('assert'),
-    m = require('../bin/findSubsetIncludingSubstringFromWordStart'),
+    m = require('../bin/findSubsequenceIncludingSubstringFromWordStart'),
 
     a = [
         'abort',    // 0

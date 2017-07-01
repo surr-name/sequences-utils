@@ -30,6 +30,12 @@ const
     twoElementsArray = [
         'abort',    // 0
         'abroad',   // 1
+    ],
+
+    equals = [
+        'ab',  // 0
+        'ab',  // 1
+        'ab'   // 2
     ];
 
 describe('findSubsetInclSubstrFromWordStart should find', ()=>{
@@ -102,6 +108,13 @@ describe('findSubsetInclSubstrFromWordStart should find', ()=>{
             _.deepStrictEqual(
                 m('abr', twoElementsArray),
                 {start: 1, length: 1}
+            );
+        });
+
+        it('in two-elements array at end', ()=>{
+            _.deepStrictEqual(
+                m('ab', equals),
+                {start: 0, length: 3}
             );
         });
     });
